@@ -1,0 +1,9 @@
+D:\code\C#\experiment_1\experiment_1\bin\Debug\experiment_1.exe.config
+D:\code\C#\experiment_1\experiment_1\bin\Debug\experiment_1.exe
+D:\code\C#\experiment_1\experiment_1\bin\Debug\experiment_1.pdb
+D:\code\C#\experiment_1\experiment_1\obj\Debug\experiment_1.csprojAssemblyReference.cache
+D:\code\C#\experiment_1\experiment_1\obj\Debug\experiment_1.Form1.resources
+D:\code\C#\experiment_1\experiment_1\obj\Debug\experiment_1.Properties.Resources.resources
+D:\code\C#\experiment_1\experiment_1\obj\Debug\experiment_1.csproj.GenerateResource.cache
+D:\code\C#\experiment_1\experiment_1\obj\Debug\experiment_1.exe
+D:\code\C#\experiment_1\experiment_1\obj\Debug\experiment_1.pdb

@@ -1,0 +1,6 @@
+D:\code\C#\experiment_1\experiment_01\bin\Debug\experiment_01.exe.config
+D:\code\C#\experiment_1\experiment_01\bin\Debug\experiment_01.exe
+D:\code\C#\experiment_1\experiment_01\bin\Debug\experiment_01.pdb
+D:\code\C#\experiment_1\experiment_01\obj\Debug\experiment_01.csprojAssemblyReference.cache
+D:\code\C#\experiment_1\experiment_01\obj\Debug\experiment_01.exe
+D:\code\C#\experiment_1\experiment_01\obj\Debug\experiment_01.pdb
