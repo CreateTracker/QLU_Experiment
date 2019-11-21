@@ -1,0 +1,227 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="GBK">
+<title>注册</title>
+	<style>
+		div{
+	        height: 330px;
+	        border:1px solid #000000;
+	        width: 80%;
+			border-radius: 10px;
+		}
+		th{
+			float: right
+		}
+		button{
+			height: 50px;
+			width: 200px;
+			border-radius: 10px;
+			border:0.5px solid #000000;
+			color: white;
+			background-color: #22DDDD;
+		}
+    </style>
+    <script type="text/javascript">
+    	
+    	function cheak_userID(){
+    		var ID = document.Myform.userID.value;
+    		var show=document.getElementById("userID_status");
+    		if(/^\w[-\w.+]*$/.test(ID)){
+    			show.innerHTML="<span style='border:1px solid #00FF00'>检测通过</span>"
+    		}else {
+    			show.innerHTML="<span style='border:1px solid #FF0000'>存在非法字符，请重新输入</span>";
+    			document.Myform.userID.value="";
+    		}
+    	}
+    	
+    	function cheak_password(){
+    		var password = document.Myform.password.value;
+    		var show=document.getElementById("password_status");
+    		if(password.length>=6&&password.length<=16){
+    			if (/^\w[-\w.+]*$/.test(password)) {
+    				show.innerHTML="<span style='border:1px solid #00FF00'>检测通过</span>"
+    			}else {
+    				show.innerHTML="<span style='border:1px solid #0000FF'>由字母、数字、下划线、点、减号组成；只能以数字、字母开头或结尾，且长度为4-18。</span>";
+    			}
+    			
+    		}else if (password=="") {
+                show.innerHTML="<span style='border:1px solid #FF0000'>不能为空</span>"
+            }
+            else {
+    			show.innerHTML="<span style='border:1px solid #FFFF00'>密码长度为6-16</span>"
+    			document.Myform.password.value="";
+    		}
+    	}
+    	
+    	function cheak_repassword(){
+    		var password = document.Myform.password.value;
+    		var repassword = document.Myform.repassword.value;
+    		var show=document.getElementById("repassword_status");
+    		if(password==repassword&&repassword!=""){
+    			show.innerHTML="<span style='border:1px solid #00FF00'>检测通过</span>"
+    		}
+            else {
+    			show.innerHTML="<span style='border:1px solid #FF0000'>与上次输入密码不一致</span>"
+    			document.Myform.repassword.value=""
+    		}
+
+    	}
+    	function cheak_name(){
+    		var name = document.Myform.name.value;
+    		var show=document.getElementById("name_status");
+    		if (name.length <= 4 && /^[\u4e00-\u9fa5]*$/.test(name)) {
+                show.innerHTML="<span style='border:1px solid #FFFF00'>检测通过(非必填)</span>"
+            } else if (/^[A-Za-z]*$/.test(name)) {
+                show.innerHTML="<span style='border:1px solid #FFFF00'>检测通过(非必填)</span>"
+            } else {
+                show.innerHTML="<span style='border:1px solid #FF0000'>请输入正确的姓名，中文或英文大小写</span>"
+                document.Myform.name.value=""
+            }
+
+    	}
+    	function cheak_userName(){
+    		var userName = document.Myform.userName.value;
+    		var show=document.getElementById("userName_status");
+    		if (userName=="") {
+    			show.innerHTML="<span style='border:1px solid #FF0000'>昵称不能为空，请输入昵称</span>"
+    		}else {
+    			show.innerHTML="<span style='border:1px solid #00FF00'>检测通过</span>"
+    		}
+
+    	}
+    	function cheak_phoneNumber(){
+    		var phoneNumber = document.Myform.phoneNumber.value;
+    		var show=document.getElementById("phoneNumber_status");
+    		if (phoneNumber=="") {
+    			show.innerHTML="<span style='border:1px solid #FF0000'>关联手机号码不能为空，请输入关联手机号码</span>"
+    		}else if(/0?(13|15|18)[0-9]{9}/.test(phoneNumber)&&phoneNumber.length==11){
+    			show.innerHTML="<span style='border:1px solid #00FF00'>检测通过</span>"
+    		}else{
+    			show.innerHTML="<span style='border:1px solid #FF0000'>请输入正确的中国大陆手机号</span>"
+    			document.Myform.phoneNumber.value=""
+    		}
+
+    	}
+    	function cheak_email(){
+    		var email = document.Myform.email.value;
+    		var show=document.getElementById("email_status");
+    		if(email==""){
+    			show.innerHTML="<span style='border:1px solid #FF0000'>保密邮箱不能为空，请输入保密邮箱</span>"
+    		}else if(/\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}/.test(email)){
+    			show.innerHTML="<span style='border:1px solid #00FF00'>检测通过</span>"
+    		}else{
+    			show.innerHTML="<span style='border:1px solid #FF0000'>请输入正确的邮箱</span>"
+    			document.Myform.email.value=""
+    		}
+
+    	}
+    	/******************************************************************************************/
+    	function Tips_1(){
+    		var show=document.getElementById("userID_status");
+    		show.innerHTML="<span style='border:1px solid #0000FF'>由字母、数字、下划线、点、减号组成；只能以数字、字母开头或结尾，且长度为4-18。</span>";
+    	}
+        function Tips_2(){
+            var show=document.getElementById("password_status");
+            show.innerHTML="<span style='border:1px solid #0000FF'>密码长度为6-16位</span>";
+        }
+        function Tips_3(){
+            var show=document.getElementById("name_status");
+            show.innerHTML="<span style='border:1px solid #0000FF'>包含汉字、字母、数字、下划线以及@!#$%&*特殊字符；长度为4－20个字符；一个汉字占两个字符</span>";
+        }
+        function Tips_4(){
+            var show=document.getElementById("phoneNumber_status");
+            show.innerHTML="<span style='border:1px solid #0000FF'>手机号码以13，15，18开头；手机号码由11位数字组成</span>";
+        }
+        function Tips_5(){
+            var show=document.getElementById("email_status");
+            show.innerHTML="<span style='border:1px solid #0000FF'>请输入常用邮箱</span>";
+        }
+
+        function sign_in(){
+        	var ID = document.Myform.userID.value;
+        	var name = document.Myform.name.value;
+        	var userName = document.Myform.userName.value;
+        	var phoneNumber = document.Myform.phoneNumber.value;
+        	var email = document.Myform.email.value;
+        	var password = document.Myform.password.value;
+    		var repassword = document.Myform.repassword.value;
+        	if (ID!=""&&userName!="") {
+        		if (phoneNumber!=""&&email!="") {
+        			if (password!=""&&repassword!="") {
+        				alert("ID："+ID+
+        		"\nname："+name+
+        		"\nuserName："+userName+
+        		"\nphoneNumber："+phoneNumber+
+        		"\nemail："+email+
+        		"\n注册成功！");
+        			}else{
+        				alert("请填写正确信息");
+        			}
+        		}else {
+        			alert("请填写正确信息");
+        		}
+
+        	}else {
+        		alert("请填写正确信息");
+        	}
+        	
+        }
+
+    </script>
+</head>
+
+<body>
+<form name="Myform">
+  <center>
+    <div>
+      <table width="100%" border="0" cellspacing="5" cellpadding="2">
+        <tbody>
+          <tr>
+            <th scope="col">通行证用户名：</th>
+            <td><input type="text" name="userID" onblur="cheak_userID()" onfocus="Tips_1()">@163.com</td>
+            <td id="userID_status">&nbsp;</td>
+          </tr>
+          <tr>
+            <th scope="row">登录密码：</th>
+            <td><input type="password" name="password" onblur="cheak_password()" onfocus="Tips_2()"></td>
+            <td id="password_status">&nbsp;</td>
+          </tr>
+          <tr>
+            <th scope="row">重复登录密码：</th>
+            <td><input type="password" name="repassword" onblur="cheak_repassword()"></td>
+            <td id="repassword_status">&nbsp;</td>
+          </tr>
+          <tr>
+            <th scope="row">性别：</th>
+            <td><input type="radio" name="sex">男<input type="radio" name="sex">女</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <th scope="row">真实姓名：</th>
+            <td><input type="text" name="name" onblur="cheak_name()" onfocus="Tips_3()"></td>
+            <td id="name_status">&nbsp;</td>
+          </tr>
+          <tr>
+            <th scope="row">昵称：</th>
+            <td><input type="text" name="userName" onblur="cheak_userName()"></td>
+            <td id="userName_status">&nbsp;</td>
+          </tr>
+          <tr>
+            <th scope="row">关联手机号：</th>
+            <td><input type="text" name="phoneNumber" onblur="cheak_phoneNumber()" onfocus="Tips_4()"></td>
+            <td id="phoneNumber_status">&nbsp;</td>
+          </tr>
+          <tr>
+            <th scope="row">保密邮箱：</th>
+            <td><input type="text" name="email" onblur="cheak_email()" onfocus="Tips_5()"></td>
+            <td id="email_status">&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+		<span><button onclick="sign_in()" type="button"><h3>注册</h3></button></span>
+    </div>
+  </center>
+</form>
+</body>
+</html>
